@@ -27,17 +27,6 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Y1-Lw-i4S">
-                                        <rect key="frame" x="355" y="44" width="37" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="28"/>
-                                        <state key="normal">
-                                            <string key="title">➡️
-seta à direita
-Unicode: U+27A1 U+FE0F, UTF-8: E2 9E A1 EF B8 8F</string>
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9cn-4c-gZs">
                                         <rect key="frame" x="55" y="91" width="305" height="95"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -47,20 +36,40 @@ Unicode: U+27A1 U+FE0F, UTF-8: E2 9E A1 EF B8 8F</string>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBp-y8-VkD">
-                                        <rect key="frame" x="8" y="304" width="84" height="57"/>
+                                        <rect key="frame" x="8" y="309" width="84" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" title="Celsius">
                                             <color key="titleColor" systemColor="opaqueSeparatorColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="convert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2YP-rg-qJT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8a6-6Z-3sM">
-                                        <rect key="frame" x="295" y="304" width="111" height="57"/>
+                                        <rect key="frame" x="285" y="309" width="121" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                         <state key="normal" title="Farenheint">
                                             <color key="titleColor" systemColor="opaqueSeparatorColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="convert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aog-xg-Rxm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Y1-Lw-i4S">
+                                        <rect key="frame" x="356" y="42" width="49" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="28"/>
+                                        <state key="normal">
+                                            <string key="title">➡️
+seta à direita
+Unicode: U+27A1 U+FE0F, UTF-8: E2 9E A1 EF B8 8F</string>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rY3-fs-o23"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.22745098039215686" green="0.52156862745098043" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
@@ -83,6 +92,13 @@ Unicode: U+27A1 U+FE0F, UTF-8: E2 9E A1 EF B8 8F</string>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="btUnit1" destination="tBp-y8-VkD" id="Y1F-2E-qJh"/>
+                        <outlet property="btUnit2" destination="8a6-6Z-3sM" id="OQF-U0-eO3"/>
+                        <outlet property="lbResult" destination="G9k-rK-rUx" id="gD9-J5-MHC"/>
+                        <outlet property="lbResultUnit" destination="ZEz-mv-dmz" id="DDh-6k-18l"/>
+                        <outlet property="tfValue" destination="9cn-4c-gZs" id="nio-tH-skc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
