@@ -97,6 +97,7 @@ Unicode: U+27A1 U+FE0F, UTF-8: E2 9E A1 EF B8 8F</string>
                         <outlet property="btUnit2" destination="8a6-6Z-3sM" id="OQF-U0-eO3"/>
                         <outlet property="lbResult" destination="G9k-rK-rUx" id="gD9-J5-MHC"/>
                         <outlet property="lbResultUnit" destination="ZEz-mv-dmz" id="DDh-6k-18l"/>
+                        <outlet property="lbUnit" destination="phK-dw-d5D" id="T9e-sG-edF"/>
                         <outlet property="tfValue" destination="9cn-4c-gZs" id="nio-tH-skc"/>
                     </connections>
                 </viewController>
