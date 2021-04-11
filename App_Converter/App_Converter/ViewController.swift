@@ -54,5 +54,23 @@ class ViewController: UIViewController {
             }
             sender.alpha = 1.0
         }
+        
+        switch lbUnit.text! {
+        case "Temperatura":
+            calcTemperature()
+        case "Peso":
+            calcWeight()
+        case "Moeda":
+            calcCurrency()
+        default :
+            calcDistance()
+            
+        }
     }
+    
+    func calcTemperature(){}
+    func calcWeight(){}
+    func calcCurrency() {}
+    func calcDistance(){}
+    
 }
