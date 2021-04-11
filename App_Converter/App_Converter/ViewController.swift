@@ -40,12 +40,16 @@ class ViewController: UIViewController {
             lbUnit.text = "Temperatura"
             btUnit1.setTitle("Celsius", for: .normal)
             btUnit2.setTitle("Farenheint", for: .normal)
-
         }
+        convert(nil)
     }
     
-    @IBAction func convert(_ sender: Any) {
-        
+    @IBAction func convert(_ sender: UIButton?) {
+        if let sender = sender {
+            if sender == btUnit1 {
+                
+            }
+        }
     }
     
 
