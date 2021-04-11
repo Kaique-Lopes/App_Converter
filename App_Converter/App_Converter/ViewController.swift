@@ -47,11 +47,12 @@ class ViewController: UIViewController {
     @IBAction func convert(_ sender: UIButton?) {
         if let sender = sender {
             if sender == btUnit1 {
+                btUnit2.alpha = 0.5
                 
+            }else {
+                btUnit1.alpha = 0.5
             }
+            sender.alpha = 1.0
         }
     }
-    
-
 }
-
