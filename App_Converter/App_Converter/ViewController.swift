@@ -68,7 +68,17 @@ class ViewController: UIViewController {
         }
     }
     
-    func calcTemperature(){}
+    func calcTemperature(){
+        guard let temperature = Double(tfValue.text!) else {return}
+        if btUnit1.alpha == 1.0 {
+            lbResultUnit.text = "Farenheit"
+            lbResult.text = String(temperature * 1.8 + 32.0)
+        } else {
+            lbResultUnit.text = "Celsius"
+            lbResult.text = String((temperature - 32.0) / 1.8)
+        }
+ 
+    }
     func calcWeight(){}
     func calcCurrency() {}
     func calcDistance(){}
