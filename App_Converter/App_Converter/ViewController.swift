@@ -30,12 +30,12 @@ class ViewController: UIViewController {
             lbUnit.text = "Moeda"
             btUnit1.setTitle("Real", for: .normal)
             btUnit2.setTitle("Dólar", for: .normal)
-
+            
         case "Moeda":
             lbUnit.text = "Distancia"
             btUnit1.setTitle("Metro", for: .normal)
             btUnit2.setTitle("Quilometro", for: .normal)
-
+            
         default :
             lbUnit.text = "Temperatura"
             btUnit1.setTitle("Celsius", for: .normal)
@@ -78,7 +78,30 @@ class ViewController: UIViewController {
             lbResult.text = String((temperature - 32.0) / 1.8)
         }
     }
+    
     func calcWeight(){
+        guard let weight = Double(tfValue.text!) else {return}
+        if btUnit1.alpha == 1.0 {
+            lbResultUnit.text = "Libra"
+            lbResult.text = String(weight / 2.2046)
+        } else {
+            lbResultUnit.text = "Kilograma"
+            lbResult.text = String(weight * 2.2046)
+        }
+    }
+    
+    func calcCurrency() {
+        guard let currency = Double(tfValue.text!) else {return}
+        if btUnit1.alpha == 1.0 {
+            lbResultUnit.text = "Dolar"
+            lbResult.text = String(currency / 5.5)
+        } else {
+            lbResultUnit.text = "Real"
+            lbResult.text = String(currency * 3.5)
+        }
+    }
+    
+    func calcDistance() {
         guard let distance = Double(tfValue.text!) else {return}
         if btUnit1.alpha == 1.0 {
             lbResultUnit.text = "Kilometro"
@@ -88,7 +111,4 @@ class ViewController: UIViewController {
             lbResult.text = String(distance * 1000)
         }
     }
-    func calcCurrency() {}
-    func calcDistance(){}
-    
 }
