@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showNext(_ sender: UIButton) {
-        switch lbUnit.text {
+        switch lbUnit.text! {
         case "Temperatura":
             lbUnit.text = "Peso"
             btUnit1.setTitle("Kilograma", for: .normal)
@@ -66,8 +66,10 @@ class ViewController: UIViewController {
             calcDistance()
             
         }
+        view.endEditing(true)
+        let result = Double(lbResult.text!)!
+        lbResult.text = String(format: "%.2f", result)
     }
-    
     func calcTemperature(){
         guard let temperature = Double(tfValue.text!) else {return}
         if btUnit1.alpha == 1.0 {
@@ -88,16 +90,17 @@ class ViewController: UIViewController {
             lbResultUnit.text = "Kilograma"
             lbResult.text = String(weight * 2.2046)
         }
+        
     }
     
     func calcCurrency() {
         guard let currency = Double(tfValue.text!) else {return}
         if btUnit1.alpha == 1.0 {
             lbResultUnit.text = "Dolar"
-            lbResult.text = String(currency / 5.5)
+            lbResult.text = String(currency / 5.73)
         } else {
             lbResultUnit.text = "Real"
-            lbResult.text = String(currency * 3.5)
+            lbResult.text = String(currency * 5.73)
         }
     }
     
@@ -105,10 +108,10 @@ class ViewController: UIViewController {
         guard let distance = Double(tfValue.text!) else {return}
         if btUnit1.alpha == 1.0 {
             lbResultUnit.text = "Kilometro"
-            lbResult.text = String(distance / 1000)
+            lbResult.text = String(distance / 1000.0)
         } else {
             lbResultUnit.text = "Metro"
-            lbResult.text = String(distance * 1000)
+            lbResult.text = String(distance * 1000.0)
         }
     }
 }
